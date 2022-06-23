@@ -358,3 +358,233 @@
 // };
 
 // console.log(countLikes(tweets)); // 32
+
+// зберемо в масив усі теги, які зустрічаються в постах.
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+
+// // Пройдемо по всіх елементах колекції і додамо значення властивості tags
+// // до акумулятора, початкове значення якого вкажемо порожнім масивом [].
+// // На кожній ітерації пушимо в акумулятор усі елементи tweet.tags і повертаємо його.
+// const tags = tweets.reduce((allTags, tweet) => {
+//   allTags.push(...tweet.tags);
+
+//   return allTags;
+// }, []);
+
+// console.log(tags);
+
+// // Мабуть, збирання тегів - не одиночна операція, тому напишемо функцію
+// // для збирання тегів з колекції
+// const getTags = tweets =>
+//   tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
+
+//     return allTags;
+//   }, []);
+
+// console.log(getTags(tweets));
+
+
+
+// Після того, як ми зібрали всі теги з постів,
+//     добре б було
+// порахувати   кількість унікальних тегів в масиві.
+
+
+// const tweets = [
+//   { id: "000", likes: 5, tags: ["js", "nodejs"] },
+//   { id: "001", likes: 2, tags: ["html", "css"] },
+//   { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+//   { id: "003", likes: 8, tags: ["css", "react"] },
+//   { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+// ];
+
+// const getTags = tweets =>
+//   tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
+
+//     return allTags;
+//   }, []);
+
+// const tags = getTags(tweets);
+
+// // Винесемо callback-функцію окремо, а в reducе передамо посилання на неї.
+// // Це стандартна практика, якщо callback-функція досить велика.
+
+// // Якщо в об'єкті-акумуляторі acc відсутня своя властивість з ключем tag,
+// // то створюємо її і записуємо їй значення 0.
+// // В іншому випадку збільшуємо значення на 1.
+// const getTagStats = (acc, tag) => {
+//   if (!acc.hasOwnProperty(tag)) {
+//     acc[tag] = 0;
+//   }
+
+//   acc[tag] += 1;
+
+//   return acc;
+// };
+
+// // Початкове значення акумулятора - це порожній об'єкт {}
+// const countTags = tags => tags.reduce(getTagStats, {});
+
+// const tagCount = countTags(tags);
+// console.log(tagCount);
+
+
+
+
+// // Метод sort()
+
+
+// синтаксис
+// массив.sort((a, b) => {
+//   // Тіло колбек-функції
+// });
+// Такий масив чисел буде відсортований за зростанням
+// const scores = [61, 19, 74, 35, 92, 56];
+// scores.sort();
+// console.log(scores); // [19, 35, 56, 61, 74, 92]
+
+// Масив рядків сортується за алфавітом.
+// const students = ["Віка", "Андрій", "Олег", "Юля", "Борис", "Катя"];
+// students.sort();
+// console.log(students); // [ 'Андрій', 'Борис', 'Віка', 'Катя', 'Олег', 'Юля' ]
+
+
+
+// Водночас порядковий номер великих літер менший, ніж у малих.
+// const letters = ["b", "B", "a", "A", "c", "C"];
+// letters.sort();
+// console.log(letters); // ['A', 'B', 'C', 'a', 'b', 'c']
+
+
+// Через те, що сортується вихідний масив, порушується принцип чистоти функцій
+//  і не можна зручно створити декілька похідних колекцій на основі вихідної.Наприклад,
+//     створити колекцію, відсортовану за зростанням,
+//     а іншу - за спаданням.
+//     Тому перед сортуванням роблять повну копію вихідного масиву і сортують вже її
+//     const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort();
+
+// console.log(scores); // [61, 19, 74, 35, 92, 56]
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+
+
+
+// Якщо виклик compareFunction(a, b) повертає будь - яке 
+// від'ємне значення, тобто a менше b, сортування поставить a перед b. 
+// Це сортування за зростанням.
+
+
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const ascendingScores = [...scores].sort((a, b) => a - b);
+// console.log(ascendingScores); // [19, 35, 56, 61, 74, 92]
+
+
+// Якщо виклик compareFunction(a, b) повертає будь - яке
+//  додатне значення більше нуля, тобто b більше a,
+//     сортування поставить b перед a.Це сортування за спаданням.
+//     const scores = [61, 19, 74, 35, 92, 56];
+// const descendingScores = [...scores].sort((a, b) => b - a);
+// console.log(descendingScores); // [92, 74, 61, 56, 35, 19]
+
+
+// сортування за алфавітом
+// const students = ["Віка", "Андрій", "Олег", "Юля", "Борис", "Катя"];
+
+// const inAlphabetOrder = [...students].sort((a, b) => a.localeCompare(b));
+// console.log(inAlphabetOrder); // ['Андрій', 'Борис', 'Віка', 'Катя', 'Олег', 'Юля']
+
+// const inReversedOrder = [...students].sort((a, b) => b.localeCompare(a));
+// console.log(inReversedOrder); // ['Юля', 'Олег', 'Катя', 'Віка', 'Борис', 'Андрій']
+
+
+// Під час роботи з масивом об'єктів, сортування виконується за числовим або
+//  рядковим значенням певної властивості.Наприклад, у нас є група студентів з балами за тест. 
+// Необхідно відсортувати масив об'єктів за зростанням і спаданням кількості балів, і за ім'ям студента.
+
+// const students = [
+//   { name: "Манго", score: 83 },
+//   { name: "Полі", score: 59 },
+//   { name: "Аякс", score: 37 },
+//   { name: "Ківі", score: 94 },
+// ];
+
+// const inAscendingScoreOrder = students.sort(
+//   (firstStudent, secondStudent) => firstStudent.score - secondStudent.score
+// );
+
+// const inDescendingScoreOrder = students.sort(
+//   (firstStudent, secondStudent) => secondStudent.score - firstStudent.score
+// );
+
+// const inAlphabeticalOrder = students.sort((firstStudent, secondStudent) =>
+//   firstStudent.name.localeCompare(secondStudent.name)
+// );
+
+
+
+// Ланцюжки методів
+// У нас є масив об'єктів з іменами, балами і відвідуваними предметами кожного студента.
+
+
+// const students = [
+//   { name: "Манго", score: 83, courses: ["математика", "фізика"] },
+//   { name: "Полі", score: 59, courses: ["інформатика", "математика"] },
+//   { name: "Аякс", score: 37, courses: ["фізика", "біологія"] },
+//   { name: "Ківі", score: 94, courses: ["література", "інформатика"] },
+// ];
+// Необхідно отримати масив їхніх імен, відсортованих за зростанням балів за тест.
+// З цією метою ми відсортуємо копію масиву методом sort(),
+//     після чого методом map() створимо масив значень властивості name з відсортованого масиву
+
+
+//     const sortedByAscendingScore = [...students].sort((a, b) => a.score - b.score);
+// const names = sortedByAscendingScore.map(student => student.name);
+
+// console.log(names); // ['Аякс', 'Полі', 'Манго', 'Ківі']
+
+
+
+// за допомого ланцюжка запис буде таким:
+
+// const names = [...students]
+//   .sort((a, b) => a.score - b.score)
+//   .map(student => student.name);
+
+// console.log(names); // ['Аякс', 'Полі', 'Манго', 'Ківі']
+
+
+
+// Отримаємо масив унікальних відвідуваних предметів, відсортований за алфавітом
+// const uniqueSortedCourses = students
+//   .flatMap(student => student.courses)
+//   .filter((course, index, array) => array.indexOf(course) === index)
+//   .sort((a, b) => a.localeCompare(b));
+
+// console.log(uniqueSortedCourses); // ['біологія', 'інформатика', 'література', 'математика', 'фізика']
+
+
+
+// Метод forEach
+
+// *якщо треба перервати цикл, то використовуємо класичний метод
+
+// const numbers = [5, 10, 15, 20, 25];
+
+// // Класичний for
+// for (let i = 0; i < numbers.length; i += 1) {
+//   console.log(`Індекс ${i}, значення ${numbers[i]}`);
+// }
+
+// // Метод перебирання forEach
+// numbers.forEach(function (number, index) {
+//   console.log(`Індекс ${index}, значення ${number}`);
+// });

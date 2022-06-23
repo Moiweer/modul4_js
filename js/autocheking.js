@@ -95,3 +95,19 @@
 
 // 6
 
+function filterArray(numbers, value) {
+  const filteredNumbers = [];
+  
+    filteredNumbers.forEach(function filteredNumbers(numbers){
+     return filteredNumbers;
+     })
+    const callback1 = function () {
+        numbers > value;
+      return filteredNumbers.push(filteredNumbers);
+            
+    }
+    // const r1 = filterArray([1,2, 3, 4, 5], callback1)
+  
+
+}
+console.log(filterArray([1, 2, 3, 4, 5], 3));
