@@ -95,19 +95,130 @@
 
 // 6
 
-function filterArray(numbers, value) {
-  const filteredNumbers = [];
+// function filterArray(numbers, value) {
+//   const filteredNumbers = [];
   
-    filteredNumbers.forEach(function filteredNumbers(numbers){
-     return filteredNumbers;
-     })
-    const callback1 = function () {
-        numbers > value;
-      return filteredNumbers.push(filteredNumbers);
+//     filteredNumbers.forEach(function filteredNumbers(numbers){
+//      return filteredNumbers;
+//      })
+//     const callback1 = function () {
+//         numbers > value;
+//       return filteredNumbers.push(filteredNumbers);
             
-    }
-    // const r1 = filterArray([1,2, 3, 4, 5], callback1)
+//     }
+//     // const r1 = filterArray([1,2, 3, 4, 5], callback1)
   
 
-}
-console.log(filterArray([1, 2, 3, 4, 5], 3));
+// }
+
+// function filterArray(numbers, value) {
+ 
+//   let filteredNumbers = [];
+  
+
+//   numbers.forEach(function (number){
+// if (number > value){
+//   filteredNumbers.push(number);
+// }
+//   });
+
+//   return filteredNumbers;
+// }
+// console.log(filterArray([1, 2, 3, 4, 5], 3));
+
+// 7
+
+
+// function getCommonElements(firstArray, secondArray) {
+//   const commonElements = [];
+//   // Change code below this line
+
+//    firstArray.forEach(function (element) {
+ 
+//         if (secondArray.includes(element)) {
+//             commonElements.push(element);
+//         }
+//     });
+
+//   return commonElements;
+
+// }
+// console.log(getCommonElements([1, 2, 3], [2, 4]));
+// console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
+
+
+// 8
+
+// const calculateTotalPrice = (quantity, pricePerItem) =>
+//    quantity * pricePerItem;
+
+// 9
+
+// // Change code below this line
+// const calculateTotalPrice = (quantity, pricePerItem) =>  quantity * pricePerItem;
+
+
+// 10
+
+
+// // Change code below this line
+// const calculateTotalPrice = orderedItems => {
+//   let totalPrice = 0;
+
+//   orderedItems.forEach((item)=> {
+//     totalPrice += item;
+//   });
+
+//   return totalPrice;
+// }
+
+// 11
+
+
+// const filterArray = (numbers, value) =>{
+//   const filteredNumbers = [];
+
+//   numbers.forEach((number) =>{
+//     if (number > value) {
+//       filteredNumbers.push(number);
+//     }
+//   });
+
+  
+//   return filteredNumbers;
+// }
+
+
+// 12
+
+// // Change code below this line
+// const getCommonElements = (firstArray, secondArray) => {
+//   const commonElements = [];
+
+//   firstArray.forEach((element) => {
+//     if (secondArray.includes(element)) {
+//       commonElements.push(element);
+//     }
+//   });
+
+
+//   return commonElements;
+// }
+
+
+// 13
+
+// function changeEven(numbers, value) {
+//   const newArray = [];
+//  numbers.forEach ((number) => {
+//     if (number % 2 === 0) {
+//       return newArray.push(number + value);
+//        }
+//        newArray.push(number);
+//     });
+  
+//  return newArray;
+// };
+
+// 14
+
