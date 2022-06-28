@@ -1105,6 +1105,43 @@
 // .filter(book => book.rating > MIN_BOOK_RATING)
 // .map(book => book.author);
 
+// 46
+
+// const getNamesSortedByFriendCount = users => {
+//     return [...users]
+// .sort((friend1, friend2) => friend1.friends.length - friend2.friends.length)
+// .map(users => users.name);
+// }
+
+// 47
+// Change code below this line
+// const getSortedFriends = users => {
+//     return [...users]
+//     .flatMap(users => users.friends)
+//     .filter((friend, index, array) => array.indexOf(friend) === index)
+//    .sort((a,b) => a.localeCompare(b));
+// };
+
+// 48
+// Change code below this line
+// const getTotalBalanceByGender = (users, gender) => {
+// return [...users] 
+// .filter(users => users.gender === gender)
+// .reduce((total, users) => {
+//     return total + users.balance
+// }, 0)
+// };
+
+
+
+
+
+
+
+
+
+
+
 
 
 // -----------------------------------------------------------------------------------------
@@ -1151,23 +1188,23 @@
 // console.log(values); // ['The Last Kingdom', 'Bernard Cornwell', 8.38]
 
 // ========================================
-const books = [
-  {
-    title: "The Last Kingdom",
-    author: "Bernard Cornwell",
-    rating: 8.38,
-  },
-  {
-    title: "На березі спокійних вод",
-    author: "Роберт Шеклі",
-    rating: 8.51,
-  },
-  {
-    title: "Сон смішної людини",
-    author: "Федір Достоєвський",
-    rating: 7.75,
-  },
-];
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "На березі спокійних вод",
+//     author: "Роберт Шеклі",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "Сон смішної людини",
+//     author: "Федір Достоєвський",
+//     rating: 7.75,
+//   },
+// ];
 // for (const book of books) {
 //   // Об'єкт книги
 //   console.log(book);
@@ -1233,3 +1270,17 @@ const books = [
 // const numbers = [1, 2, 3, 4, 5];
 // const filteredNumbers = numbers.filter(value => value > 3);
 // console.log(filteredNumbers); // [4, 5]
+// const students = [
+//   { name: "Манго", courses: ["математика", "фізика"] },
+//   { name: "Полі", courses: ["інформатика", "математика"] },
+//   { name: "Ківі", courses: ["фізика", "біологія"] },
+// ];
+
+// console.log(students.map(student => student.courses));
+// // [['математика', 'фізика'], ['інформатика', 'математика'], ['фізика', 'біологія']]
+
+// console.log(students.flatMap(student => student.courses));
+// // ['математика', 'фізика', 'інформатика', 'математика', 'фізика', 'біологія'];
+// const uniqueCourses = allCourses.filter(
+//     (course, index, array) => array.indexOf(course) === index
+// );
