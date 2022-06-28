@@ -1077,6 +1077,80 @@
 // };
 // 45
 
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const names = [...books]
+// .sort((firstBook, secondBook) => firstBook.author.localeCompare(secondBook.author))
+// .filter(book => book.rating > MIN_BOOK_RATING)
+// .map(book => book.author);
+
+
+
+// -----------------------------------------------------------------------------------------
+// повторення
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+
+// for (const key in book) {
+//   // Ключ
+//   console.log(key);
+//   // Значення властивості з таким ключем
+//   console.log(book[key]);
+// }
+// ------------------------------------
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   genres: ["historical prose", "adventure"],
+//   rating: 8.38,
+// };
+// const keys = Object.keys(book);
+
+// for (const key of keys) {
+//   // Ключ
+// //   console.log(key);
+// //   // Значення властивості
+// //   console.log(book[key]);
+//     console.log(Object.keys(book))
+// }
+
+// const book = {
+//   title: "The Last Kingdom",
+//   author: "Bernard Cornwell",
+//   rating: 8.38,
+// };
+// const keys = Object.keys(book);
+// console.log(keys); // ['title', 'author', 'rating']
+
+// const values = Object.values(book);
+// console.log(values); // ['The Last Kingdom', 'Bernard Cornwell', 8.38]
+
+// ========================================
 const books = [
   {
     title: "The Last Kingdom",
@@ -1084,28 +1158,78 @@ const books = [
     rating: 8.38,
   },
   {
-    title: "Beside Still Waters",
-    author: "Robert Sheckley",
+    title: "На березі спокійних вод",
+    author: "Роберт Шеклі",
     rating: 8.51,
   },
   {
-    title: "The Dream of a Ridiculous Man",
-    author: "Fyodor Dostoevsky",
+    title: "Сон смішної людини",
+    author: "Федір Достоєвський",
     rating: 7.75,
   },
-  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
-  {
-    title: "The Dreams in the Witch House",
-    author: "Howard Lovecraft",
-    rating: 8.67,
-  },
 ];
-const MIN_BOOK_RATING = 8;
-// Change code below this line
+// for (const book of books) {
+//   // Об'єкт книги
+//   console.log(book);
+  // Назва
+//   console.log(book.title);
+  // Автор
+//   console.log(book.author);
+  // Рейтинг
+//   console.log(book.rating);
+// }
 
-const names = [...books]
-.sort((a, b) => a.rating - b.rating)
-.filter((book => book.rating >= MIN_BOOK_RATING))
-.map(book => book.author)
+// const bookNames = [];
 
-console.log(names)
+// for (const book of books) {
+//   bookNames.push(book.title);
+// }
+
+// console.log(bookNames); // ["The Last Kingdom", "На березі спокійних вод", "Сон смішної людини"]let totalRating = 0;
+// let totalRating = 0;
+// for (const book of books) {
+//   totalRating += book.rating;
+// }
+
+// const averageRating = (totalRating / books.length).toFixed(1);
+// console.log(averageRating); // 8.2
+// const temps = [14, -4, 25, 8, 11];
+
+// // В консолі буде масив
+// console.log(temps);
+// // ❌ Так не спрацює, тому що передаємо цілий масив
+// console.log(Math.max(temps)); // NaN
+
+// // В консолі буде набір окремих чисел
+// console.log(...temps);
+// // ✅ Розподілимо колекцію елементів у якості окремих аргументів
+// console.log(Math.max(...temps)); // 25
+// function multiply(...args) {
+//   console.log(args); // масив усіх аргументів
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+// function multiply(firstNumber, secondNumber, ...otherArgs) {
+//   console.log(firstNumber); // Значення першого аргументу
+//   console.log(secondNumber); // Значення другого аргументу
+//   console.log(otherArgs); // Масив інших аргументів
+// }
+
+// multiply(1, 2);
+// multiply(1, 2, 3);
+// multiply(1, 2, 3, 4);
+
+// =====================================
+// деструкторизація масивів
+// const rgb = [200, 255, 100];
+// const [red, green, blue] = rgb;
+
+// console.log(`R:${red},G:${green},B:${blue}`); // "R:200,G:255,B:100"
+// ===========================================
+
+// Декларативний підхід
+// const numbers = [1, 2, 3, 4, 5];
+// const filteredNumbers = numbers.filter(value => value > 3);
+// console.log(filteredNumbers); // [4, 5]
